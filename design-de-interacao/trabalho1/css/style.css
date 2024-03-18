@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#formulario {
+    text-align: center;
+}
+
+.cartao-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cartao {
+    width: 300px;
+    height: 200px;
+    background-color: #8A05BE;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    perspective: 1000px;
+}
+
+.chip {
+    width: 50px;
+    height: 35px;
+    background: #EEE;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cartao-superior {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.cartao-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+#numero-cartao,
+#data-validade,
+#cvv {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#assinatura {
+    font-size: 0.8rem;
+    flex: 1;
+    margin-left: 5px;
+}

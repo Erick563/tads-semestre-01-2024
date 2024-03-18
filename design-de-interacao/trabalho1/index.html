@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitor de Cartão</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <h1>teste</h1>
-    
+    <main>
+        <form>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="Erick S Martins"
+                    oninput="alteraAssinaturaCartao(this)">
+                <label>Assinatura Cartão</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="1234 5678 9012 3456"
+                    oninput="alteraNumeroCartao(this)" onchange="validaNumeroCartao(this)">
+                <label>Número do Cartão</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="12/02" oninput="alteraDataValidade(this)"
+                    onchange="validaDataValidade(this)">
+                <label>Data de Validade</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="CVV" oninput="alteraCVV(this)"
+                    onchange="validaCVV(this)">
+                <label>CVV</label>
+            </div>
+            <label class="form-label">Cor do cartão</label>
+            <input type="color" class="form-control form-control-color" value="#8A05BE"
+                onchange="alteraCorCartao(this)">
+            <div class="form-group">
+
+                <label class="form-label">Bandeira do cartão</label> <br>
+
+                <img onclick="alteraLogo('./img/mastercard.png')" class="logo" src="./img/mastercard.png" alt="mastercard">
+
+                <img onclick="alteraLogo('./img/visa.png')" class="logo" src="./img/visa.png" alt="visa">
+
+                <img onclick="alteraLogo('./img/hipercard.png')" class="logo" src="./img/hipercard.png" alt="hipercard">
+
+            </div>
+        </form>
+
+        <br>
+
+        <div id="cartao">
+            <div class="cartao-superior">
+                <div class="chip">
+                    <img id="logo" class="chip" src="./img/mastercard.png" alt="mastercard">
+                </div>
+                <p id="assinatura">Erick S Martins</p>
+            </div>
+            <div class="cartao-details">
+                <div id='numero-cartao'>1234 5678 9012 3456</div>
+                <div id='data-validade'>12/24</div>
+                <div id='cvv'>CVV: 123</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
