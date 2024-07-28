@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#startScreen {
+    text-align: center;
+}
+
+#startScreen h1 {
+    font-size: 3rem;
+    color: #0095DD;
+}
+
+#startScreen p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#startScreen button {
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0095DD;
+    color: #fff;
+    cursor: pointer;
+}
+
+#startScreen button:hover {
+    background-color: #007bb5;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 480px;
+    max-height: 320px;
+    background-color: #fff;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+#paddle {
+    position: absolute;
+    bottom: 10px;
+    width: 15%;
+    height: 10px;
+    background-color: #0095DD;
+    transform: translateX(-50%);
+}
+
+#ball {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #0095DD;
+    border-radius: 50%;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.brick {
+    position: absolute;
+    width: 15%;
+    height: 20px;
+    background-color: #0095DD;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    color: #0095DD;
+}
+
+#message {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #0095DD;
+    display: none;
+    text-align: center;
+}
+
+#message button {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0095DD;
+    color: #fff;
+    cursor: pointer;
+}
+
+#message button:hover {
+    background-color: #007bb5;
+}
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+    color: #0095DD;
+    transform: translate(-50%, -50%);
+}
