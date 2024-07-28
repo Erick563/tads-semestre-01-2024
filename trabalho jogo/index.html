@@ -10,10 +10,22 @@
     <div id="startScreen">
         <h1>Brick Breaker</h1>
         <p>Escolha a dificuldade:</p>
-        <button onclick="startGame('easy')">Fácil</button>
-        <button onclick="startGame('medium')">Médio</button>
-        <button onclick="startGame('hard')">Difícil</button>
+        <button onclick="startGame('facil')">Fácil</button>
+        <button onclick="startGame('medio')">Médio</button>
+        <button onclick="startGame('dificil')">Difícil</button>
         <button onclick="startGame('expert')">Expert</button>
+        <h2>Recordes</h2>
+        <table id="highScoresTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Pontuação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As pontuações serão preenchidas dinamicamente -->
+            </tbody>
+        </table>
     </div>
     <div id="gameContainer" style="display: none;">
         <div id="paddle"></div>

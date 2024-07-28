@@ -1,7 +1,31 @@
-// Variáveis globais para dificuldade
-let difficulty = 'medium';
+// Variáveis globais para dificuldade e recordes
+let difficulty = 'medio';
 let countdownInterval;
 let gameStarted = false;
+let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+// Função para atualizar a tabela de recordes
+function updateHighScoresTable() {
+    const tableBody = document.querySelector('#highScoresTable tbody');
+    tableBody.innerHTML = '';
+    highScores.sort((a, b) => b.score - a.score); // Ordena os recordes por pontuação
+    highScores.forEach((score, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${score.difficulty}</td>
+            <td>${score.score}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Função para salvar o recorde
+function saveHighScore(difficulty, score) {
+    highScores.push({ difficulty, score });
+    highScores.sort((a, b) => b.score - a.score); // Ordena os recordes por pontuação
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    updateHighScoresTable();
+}
 
 // Função para iniciar a contagem regressiva
 function startCountdown() {
@@ -67,19 +91,19 @@ let score = 0;
 // Configurações baseadas na dificuldade
 function setDifficulty(level) {
     switch (level) {
-        case 'easy':
+        case 'facil':
             ballDX = 2;
             ballDY = -2;
             brickRowCount = 2;
             brickColumnCount = 4;
             break;
-        case 'medium':
+        case 'medio':
             ballDX = 3;
             ballDY = -3;
             brickRowCount = 3;
             brickColumnCount = 5;
             break;
-        case 'hard':
+        case 'dificil':
             ballDX = 5;
             ballDY = -5;
             brickRowCount = 4;
@@ -175,6 +199,7 @@ function updateGame() {
     ballY += ballDY;
 
     if (ballY + ballDY >= container.offsetHeight - ballSize) {
+        saveHighScore(difficulty, score);
         messageText.textContent = 'Game Over!';
         messageDisplay.style.display = 'block';
         restartButton.style.display = 'block';
@@ -234,3 +259,6 @@ function updateGame() {
 
     requestAnimationFrame(updateGame);
 }
+
+// Inicializa a tela de recordes
+updateHighScoresTable();

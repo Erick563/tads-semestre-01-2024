@@ -155,4 +155,33 @@ body {
     #gameContainer {
         max-width: 100%;
     }
+
+    #highScoresTable {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #highScoresTable th,
+    #highScoresTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    #highScoresTable th {
+        background-color: #0095DD;
+        color: white;
+    }
+
+    #highScoresTable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #highScoresTable tr:hover {
+        background-color: #ddd;
+    }
 }
