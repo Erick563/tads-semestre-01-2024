@@ -1,6 +1,7 @@
 // Variáveis globais para dificuldade
 let difficulty = 'medium';
 let countdownInterval;
+let gameStarted = false;
 
 // Função para iniciar a contagem regressiva
 function startCountdown() {
@@ -18,6 +19,7 @@ function startCountdown() {
             document.getElementById('startScreen').style.display = 'none';
             document.getElementById('gameContainer').style.display = 'block';
             createBricks();
+            gameStarted = true;
             updateGame();
         }
     }, 1000);
@@ -137,6 +139,26 @@ document.addEventListener('keyup', (e) => {
     } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
         leftPressed = false;
     }
+});
+
+// Controles móveis
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+leftButton.addEventListener('touchstart', () => {
+    if (gameStarted) leftPressed = true;
+});
+
+leftButton.addEventListener('touchend', () => {
+    leftPressed = false;
+});
+
+rightButton.addEventListener('touchstart', () => {
+    if (gameStarted) rightPressed = true;
+});
+
+rightButton.addEventListener('touchend', () => {
+    rightPressed = false;
 });
 
 // Função de atualização do jogo
