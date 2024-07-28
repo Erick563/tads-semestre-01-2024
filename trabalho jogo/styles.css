@@ -118,3 +118,42 @@ body {
     color: #0095DD;
     transform: translate(-50%, -50%);
 }
+
+#mobileControls {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#mobileControls button {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0095DD;
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#mobileControls button:hover {
+    background-color: #007bb5;
+}
+
+@media (max-width: 768px) {
+    #mobileControls {
+        display: block;
+    }
+
+    #paddle {
+        width: 20%;
+    }
+
+    #gameContainer {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
