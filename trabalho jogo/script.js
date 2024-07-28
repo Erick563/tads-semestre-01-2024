@@ -248,6 +248,7 @@ function updateGame() {
             if (bricks.length === 0) {
                 var audio = new Audio('audio/vitoria.mp3');
                 audio.play();
+                saveHighScore(difficulty, score);
                 messageText.textContent = 'Você Ganhou!';
                 messageDisplay.style.display = 'block';
                 restartButton.style.display = 'block';
