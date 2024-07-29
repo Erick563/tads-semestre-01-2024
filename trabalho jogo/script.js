@@ -23,6 +23,7 @@ function updateHighScoresTable() {
 function saveHighScore(difficulty, score) {
     highScores.push({ difficulty, score });
     highScores.sort((a, b) => b.score - a.score); // Ordena os recordes por pontuação
+    if (highScores.length > 5) highScores.length = 5; // Mantém apenas os 5 melhores recordes
     localStorage.setItem('highScores', JSON.stringify(highScores));
     updateHighScoresTable();
 }
