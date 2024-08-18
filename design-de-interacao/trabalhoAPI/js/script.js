@@ -1,6 +1,6 @@
 function createTable(headers, data, dataKeys) {
 
-    if (data.length == 0)
+    if (!data)
         return;
 
     const table = document.createElement('table');
@@ -90,7 +90,7 @@ function buscarFeriados() {
     Rest.get(url)
         .then(data => {
 
-            if(data.length == 0)
+            if(!data)
                 return;
 
             data.forEach(item => {
