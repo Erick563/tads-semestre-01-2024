@@ -1,5 +1,8 @@
 function createTable(headers, data, dataKeys) {
 
+    if (data.length == 0)
+        return;
+
     const table = document.createElement('table');
     table.classList.add('table', 'table-bordered', 'table-striped');
 
@@ -86,6 +89,9 @@ function buscarFeriados() {
 
     Rest.get(url)
         .then(data => {
+
+            if(data.length == 0)
+                return;
 
             data.forEach(item => {
                 let date = new Date(item.date);
