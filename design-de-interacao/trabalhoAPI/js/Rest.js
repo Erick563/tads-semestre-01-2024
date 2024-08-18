@@ -10,7 +10,7 @@ const Rest = {
 
             return data;
         } catch (error) {
-            alert(error.message);
+            throw error;
         }
     },
 
@@ -26,7 +26,7 @@ const Rest = {
             const data = await response.json();
             return data;
         } catch (error) {
-            alert(error.message);
+            throw error;
         }
     }
 }

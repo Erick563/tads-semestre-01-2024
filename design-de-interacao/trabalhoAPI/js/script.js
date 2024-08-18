@@ -1,8 +1,5 @@
 function createTable(headers, data, dataKeys) {
 
-    if (!data)
-        return;
-
     const table = document.createElement('table');
     table.classList.add('table', 'table-bordered', 'table-striped');
 
@@ -32,6 +29,7 @@ function createTable(headers, data, dataKeys) {
     return table;
 }
 
+/** Essa API aqui tem sofrido instabilidade por algumas vezes nos testes. */
 Rest.get('https://brasilapi.com.br/api/taxas/v1')
     .then(data => {
         const headers = ['Taxa', 'Valor %'];
@@ -40,6 +38,9 @@ Rest.get('https://brasilapi.com.br/api/taxas/v1')
 
         const taxasBrasil = document.getElementById('taxasBrasil');
         taxasBrasil.appendChild(table);
+    })
+    .catch(error => {
+        alert(error.message);
     });
 
 Rest.get('https://brasilapi.com.br/api/ibge/municipios/v1/RS?providers=dados-abertos-br,gov,wikipedia')
@@ -50,6 +51,9 @@ Rest.get('https://brasilapi.com.br/api/ibge/municipios/v1/RS?providers=dados-abe
 
         const municipiosRS = document.getElementById('municipiosRS');
         municipiosRS.appendChild(table);
+    })
+    .catch(error => {
+        alert(error.message);
     });
 
 
@@ -70,6 +74,9 @@ function buscarCep() {
             const endereco = document.getElementById('endereco');
             endereco.innerHTML = '';
             endereco.appendChild(table);
+        })
+        .catch(error => {
+            alert(error.message);
         });
 }
 
@@ -90,9 +97,6 @@ function buscarFeriados() {
     Rest.get(url)
         .then(data => {
 
-            if(!data)
-                return;
-
             data.forEach(item => {
                 let date = new Date(item.date);
                 let localDate = new Date(date.getTime() + date.getTimezoneOffset() * 60000);
@@ -106,6 +110,9 @@ function buscarFeriados() {
             const feriados = document.getElementById('feriados');
             feriados.innerHTML = '';
             feriados.appendChild(table);
+        })
+        .catch(error => {
+            alert(error.message);
         });
 }
 
