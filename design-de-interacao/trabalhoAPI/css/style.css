@@ -1,0 +1,45 @@
+body{
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+}
+
+#municipiosRS {
+    max-height: 200px;
+    overflow-y: auto; 
+}
+
+#municipiosRS table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#municipiosRS th, #municipiosRS td {
+    padding: 8px;
+    text-align: left;
+    font-size: 12px;
+}
+
+#col-md-6 {
+    min-width: "400px";
+    width: 50%;
+    float: left;
+}
+
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Remove os spinners no Chrome, Safari, Edge e Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove os spinners no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
